@@ -126,7 +126,6 @@
                     runat="server"
                     AutoGenerateColumns="False"
                     Style="margin-top: 1rem"
-                    OnRowCommand="gvItemList_RowCommand"
                     OnRowDataBound="gvItemList_RowDataBound"
                     GridLines="Horizontal"
                     CellPadding="10"
