@@ -142,50 +142,6 @@ namespace FinalProject_Chains.SystemAdmin
             }
         }
 
-        protected void gvItemList_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            string errMsg = string.Empty;
-            if (e.CommandName == "AddCart")
-            {
-                //取得點擊的索引值
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
-
-                //取得點擊的該列
-                GridViewRow row = this.gvItemList.Rows[rowIndex];
-
-                //取得資訊
-                TextBox txtOrderCount = (TextBox)row.Cells[5].FindControl("txtOrderCount");
-                TextBox txtOrderRemark = (TextBox)row.Cells[6].FindControl("txtOrderRemark");
-                Button btnAddCart = (Button)row.Cells[7].FindControl("btnAddCart");
-                Button btnEditCart = (Button)row.Cells[7].FindControl("btnEditCart");
-
-                txtOrderCount.Enabled = false;
-                txtOrderRemark.Enabled = false;
-                btnAddCart.Visible = false;
-                btnEditCart.Visible = true;
-            }
-            else if (e.CommandName == "EditCart")
-            {
-
-                //取得點擊的索引值
-                int rowIndex = Convert.ToInt32(e.CommandArgument);
-
-                //取得點擊的該列
-                GridViewRow row = this.gvItemList.Rows[rowIndex];
-
-                //取得資訊
-                TextBox txtOrderCount = (TextBox)row.Cells[5].FindControl("txtOrderCount");
-                TextBox txtOrderRemark = (TextBox)row.Cells[6].FindControl("txtOrderRemark");
-                Button btnAddCart = (Button)row.Cells[7].FindControl("btnAddCart");
-                Button btnEditCart = (Button)row.Cells[7].FindControl("btnEditCart");
-
-                txtOrderCount.Enabled = true;
-                txtOrderRemark.Enabled = true;
-                btnAddCart.Visible = true;
-                btnEditCart.Visible = false;
-            }
-        }
-
         protected void gvItemList_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
